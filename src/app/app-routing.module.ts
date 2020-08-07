@@ -1,8 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { ShopComponent } from './shop/shop.component';
 
 
-const routes: Routes = [];
+const routes: Routes = [
+  {path: '', component: ShopComponent},
+  {path: 'bookmarks', loadChildren: ()=>import('./bookmarks/bookmarks.module').then(m=>m.BookmarksModule)}
+
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

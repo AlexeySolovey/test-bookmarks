@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 
-import { MatSliderModule } from '@angular/material/slider';
+import {MatIconModule} from '@angular/material/icon';
+import {MatCardModule} from '@angular/material/card';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 
-const MaterialComponents = [MatSliderModule];
+const MaterialComponents = [MatIconModule, MatCardModule, MatGridListModule];
 
 @NgModule({
   imports: [MaterialComponents],
