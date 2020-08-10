@@ -5,11 +5,11 @@ import { State } from 'src/app/main/interface/store';
 import { updateMarkAction } from 'src/app/store/product.action';
 
 @Component({
-  selector: 'ui-card',
-  templateUrl: './card.component.html',
-  styleUrls: ['./card.component.css']
+  selector: 'ui-card-product',
+  templateUrl: './card-product.component.html',
+  styleUrls: ['./card-product.component.css']
 })
-export class CardComponent implements OnInit {
+export class CardProductComponent implements OnInit {
 
   @Input() product: Product;
   

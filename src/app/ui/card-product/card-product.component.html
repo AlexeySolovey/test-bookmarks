@@ -7,6 +7,11 @@
     <img mat-card-image [src]="product.url" alt="Photo">
     <mat-card-content></mat-card-content>
     <mat-card-actions>
-        <button mat-button (click)="updateMark(product.id, true)">Add to bookmarks</button>
+        <button
+            mat-stroked-button 
+            color="primary" 
+            (click)="updateMark(product.id, !product.mark)"
+            [innerHtml]="product.mark ? 'Remove from bookmarks' : 'Add to bookmarks'"
+        >Add to bookmarks</button>
     </mat-card-actions>
 </mat-card>
