@@ -7,6 +7,6 @@
     <img mat-card-image [src]="product.url" alt="Photo">
     <mat-card-content></mat-card-content>
     <mat-card-actions>
-        <button mat-button>Add</button>
+        <button mat-button (click)="updateMark(product.id, true)">Add to bookmarks</button>
     </mat-card-actions>
 </mat-card>

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { State, InitialProduct } from '../main/interface/store';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-shop',
@@ -7,13 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShopComponent implements OnInit {
 
-  data = {name: 'Name', url: "https://material.angular.io/assets/img/examples/shiba2.jpg", group: "work" }
-  products = [this.data, this.data];
+  productState: Observable<InitialProduct>;
   
-  constructor() { }
+  constructor(private store: Store<State>) { }
 
   ngOnInit(): void {
-    
+    this.productState = this.store.select('productsStore');
   }
 
 }
