@@ -5,3 +5,8 @@ export interface Product {
     group: string;
     mark: boolean;
 }
+export interface ProductTypes {
+    work: Product[];
+    leisure: Product[];
+    personal: Product[];
+}

@@ -1,0 +1,26 @@
+    <mat-form-field appearance="fill">
+        <mat-label>Select me</mat-label>
+        <mat-select [(ngModel)]="productType" required (ngModelChange)="checkAvailableProduct()">
+            <mat-option value="">None</mat-option>
+            <mat-option value="work">work</mat-option>
+            <mat-option value="leisure">leisure</mat-option>
+            <mat-option value="personal">personal</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Select me</mat-label>
+        <mat-select [(ngModel)]="productID" required [disabled]="productType ? false : true">
+            <mat-option value="">None</mat-option>
+            <ng-container *ngFor="let product of productsArray">
+                <mat-option [value]="product.id">{{product.name}}</mat-option>    
+            </ng-container>
+        </mat-select>
+    </mat-form-field>
+
+    <button
+        mat-stroked-button 
+        color="primary"
+        (click)="push()"
+        [disabled]="productType&&productID ? false : true"
+    >add bookmark</button>

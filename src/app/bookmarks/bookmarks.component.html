@@ -1,1 +1,15 @@
-<p>bookmarks works!</p>
+<div class="bookmarks">
+    <h2>Work grope</h2>
+    <ui-table-product [products]="productTypes.work" *ngIf="productTypes.work.length; else elseWorkBlock"></ui-table-product>
+    <ng-template #elseWorkBlock>You don't have work bookmarks.</ng-template>
+    <h2>Leisure grope</h2>
+    <ui-table-product [products]="productTypes.leisure" *ngIf="productTypes.leisure.length; else elseLeisureBlock"></ui-table-product>
+    <ng-template #elseLeisureBlock>You don't have leisure bookmarks.</ng-template>
+    <h2>Personal grope</h2>
+    <ui-table-product [products]="productTypes.personal" *ngIf="productTypes.personal.length; else elsePersonalBlock"></ui-table-product>
+    <ng-template #elsePersonalBlock>You don't have personal bookmarks.</ng-template>
+
+
+    <h2>Add bookmarks</h2>
+    <ui-form-bookmarks></ui-form-bookmarks>
+</div>
